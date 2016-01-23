@@ -1,0 +1,72 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #00ace6;
+}
+
+#form-search {
+  padding: 50px;
+  background: linear-gradient(360deg, #0073e6, white); /* Standard syntax */
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+  float: none;
+  display: block;
+  margin: 300px auto;
+}
+
+.btn.submit-button {
+  margin-top: 20px;
+}
+
+.box {
+  width: 50%;
+  background: grey;
+  padding: 5px;
+  float: none;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.header-text {
+  padding: 3px;
+}
+
+.content {
+  padding: 10px;
+  margin: 0;
+  background: lightblue;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.left {
+  font-weight: bold;
+}
+
+.not-found {
+  width: 50%;
+  float: none;
+  display: block;
+  padding: 5px;
+  margin: 280px auto;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 22px;
+  color: blue;
+  font-weight: bold;
+}
+
+.not-found-p {
+  font-size: 20px;
+  position: relative;
+  top: -20px;
+}
