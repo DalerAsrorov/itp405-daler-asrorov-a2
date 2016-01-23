@@ -37,7 +37,7 @@ $like = '%' . $movie . '%';
 $statement->bindParam(1, $like);
 $statement->execute();
 $movies = $statement->fetchAll(PDO::FETCH_OBJ); // static property
-$isFound = true;
+
 
 echo "$numOfMovies";
 //var_dump($songs);
@@ -56,6 +56,11 @@ echo "$numOfMovies";
 </head>
 <body>
 
+<div class="query">
+  <h1>
+    <?php echo "You searched for '" . $movie . "'"; ?>
+  </h1>
+</div>
 <?php foreach($movies as $movie) : ?>
   <div class="box">
     <div class="panel panel-default no-margins header-text">
@@ -75,7 +80,13 @@ echo "$numOfMovies";
         </tr>
         <tr>
           <td><span class="left"> Rating: </span></td>
-          <td><span> <?php echo $movie->rating_name ?> </span> </td>
+          <td>
+            <span>
+              <?php
+                echo "<a href=" . "ratings.php?rating_name=" . $movie->rating_name . ">" . $movie->rating_name . "</a>";
+              ?>
+            </span>
+          </td>
         </tr>
       </table>
     </div>
@@ -85,6 +96,8 @@ echo "$numOfMovies";
 
 <div class="not-found">
   <?php
+    // Show the following if the query
+    // does not return any results
     if(!$movies) {
       echo "<h1>No Records Found. </h1> <br>";
       echo "<p><a href='index.php' class='not-found-p'> Go back to search. </a> </p>";

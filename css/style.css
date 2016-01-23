@@ -70,3 +70,13 @@ body {
   position: relative;
   top: -20px;
 }
+
+.query {
+  padding: 5px;
+  width: 50%;
+  display: block;
+  float: none;
+  margin: 10px auto;
+  color: black;
+  text-align: center;
+}
