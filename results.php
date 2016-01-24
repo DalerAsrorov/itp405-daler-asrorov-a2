@@ -14,20 +14,14 @@ $movie = $_GET['movie']; // $_REQUEST['artist']
 
 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $pw);
 
-// $sql = "
-//   SELECT title, price, play_count, artist_name
-//   FROM songs, artists
-//   WHERE songs.artist_id = artists.id
-// ";
-
 $sql = "
     SELECT title, genre_name, format_name, rating_name
     FROM dvds
-    LEFT JOIN genres
+    INNER JOIN genres
     ON dvds.genre_id = genres.id
-    LEFT JOIN formats
+    INNER JOIN formats
     ON dvds.format_id = formats.id
-    LEFT JOIN ratings
+    INNER JOIN ratings
     ON dvds.rating_id = ratings.id
     WHERE title LIKE ?
 ";
